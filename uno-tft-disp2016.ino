@@ -14,7 +14,7 @@
 #define TS_MAXX 920
 #define TS_MAXY 940
 
-int numBut = 3; //defa 2 tlac - mozno 3.. 5..
+int numBut = 3; 
 int butEn = 1;
 
 #define LCD_CS A3
@@ -55,9 +55,9 @@ int stavT1 =0;
 int stavT2 =0;
 int stavT3 =0;
 int pozX = 10;
-int pozY = 10; //vychozi pro Info //20 logo.. /40/60/80..
+int pozY = 10; //start position
 int pozYR = 10;
-int pozYr = 100; //vychozi pro Info //20 logo.. /40/60/80..
+int pozYr = 100; //
 int pozix = 200;
 int poziy = 100;
 
@@ -108,19 +108,11 @@ void setup(void) {
   digitalWrite(12, HIGH);
   
   Serial.begin(9600);
-  //Serial.println(F("DWARF3D"));
-  //Serial.println("DWARF3D");  
   tft.reset();  
   uint16_t identifier = tft.readID();
-    //test
+   
   if (test){  Serial.println(tft.readID()); }
 
-  //Serial.print(F("LCD driver chip: "));
-  //Serial.println(identifier, HEX);
-    
-  //Serial.println(tft.width());
-  //Serial.println(tft.height());
-  
   tft.begin(identifier);
   tft.fillScreen(BLACK);  
   tft.setRotation(1);//oe 
@@ -160,11 +152,6 @@ void setup(void) {
   { 
   tft.fillRect(10,131, load, 5, RED);
   } 
-
-  
-  pinMode(13, OUTPUT);
-  pinMode(12, OUTPUT);
- 
   
   tft.setTextColor(YELLOW);  
   tft.setCursor(pozX,pozY);
@@ -193,7 +180,6 @@ void loop()
       }      
     }
     if (1){ //LOK
-    //if (loadOk){ //LOK
     //----------------------------------------------------------------------
      if (sel == 'B') //set button //bit
     {
@@ -203,7 +189,7 @@ void loop()
       if ((but==1)&(setB==1))  T1OnOff(1);     
      }
        
-     if (sel == 'b') //big - prepisovatelný string na pozici Y
+     if (sel == 'b') //big - big string, position Y
     {
       for (int i=0;i<64;i++) {            strDataM[i]=0;      }  
       Serial.readBytesUntil('*', strDataM, sizeof(strData));
@@ -267,7 +253,7 @@ void loop()
 
    /// -----------------------I J K
  
-    if (sel == 'i') //ikony
+    if (sel == 'i') //icons
     {     
        int col = Serial.parseInt();
        if (col==0) icon5(c0,pozix,poziy);
@@ -283,7 +269,7 @@ void loop()
       
      }
         
-   if (sel == 'I') //ikony
+   if (sel == 'I') //icons
     {     
        int col = Serial.parseInt();
        if (col==0) icon(nic,pozix,poziy);
@@ -315,8 +301,6 @@ void loop()
       tft.setCursor(40, 120);
       tft.setTextColor(WHITE);  
       tft.setTextSize(2); 
-      //tft.println(butLabLRC);
-      //tft.setCursor(40, 123);
       tft.println(butLabL);  
       setButL(0);
     }
@@ -327,9 +311,7 @@ void loop()
       Serial.readBytesUntil('*', butLabR, sizeof(strData)); 
       tft.setCursor(190, 120);
       tft.setTextColor(WHITE);  
-      tft.setTextSize(2); 
-      //tft.println(butLabLRC);
-      //tft.setCursor(185, 123);
+      tft.setTextSize(2);
       tft.println(butLabR);
       setButR(0); 
     } 
@@ -354,30 +336,23 @@ void loop()
       if (sel == 'p') //point
        {
        int sx = Serial.parseInt();      
-       int sy = Serial.parseInt();   
-       //tft.fillCircle(sx,sy, 2, WHITE);  //PENRADIUS=2;
+       int sy = Serial.parseInt();
        tft.drawPixel(sx, sy, colTxt);
-       //tft.drawPixel(sx+1, sy, colTxt);
-       //tft.drawPixel(sx, sy+1, colTxt);
-       //tft.drawPixel(sx+1, sy+1, colTxt);
-       //tft.point(sx, sy);      
     }
       
       
-       if (sel == 'P') //point
+       if (sel == 'P') //biger 2x2 point
        {
        int sx = Serial.parseInt();      
-       int sy = Serial.parseInt();   
-       //tft.fillCircle(sx,sy, 2, WHITE);  //PENRADIUS=2;
+       int sy = Serial.parseInt();
        tft.drawPixel(sx, sy, colTxt);
        tft.drawPixel(sx+1, sy, colTxt);
        tft.drawPixel(sx, sy+1, colTxt);
        tft.drawPixel(sx+1, sy+1, colTxt);
-       //tft.point(sx, sy);      
     }
 
 
-    if (sel == 'q') //prepisovatelný string na pozici Y
+    if (sel == 'q') //string size 1 - small, position Y
     {
       for (int i=0;i<64;i++) {            strDataM[i]=0;      }  
       Serial.readBytesUntil('*', strDataM, sizeof(strData));
@@ -389,7 +364,7 @@ void loop()
      }
 
       
-    if (sel == 'Q') //prepisovatelný string na pozici Y
+    if (sel == 'Q') //string size 2 - normal, position Y
     {
       for (int i=0;i<64;i++) {            strDataM[i]=0;      }  
       Serial.readBytesUntil('*', strDataM, sizeof(strData));
@@ -400,27 +375,17 @@ void loop()
      tft.println(strDataM);     
      }
   
-   if (sel == 'R') //radek
+   if (sel == 'R') //set row
     {
-      //Serial.println("rest");
-      int num = Serial.parseInt(); 
-      
-    // tft.setCursor(130, 115);
-    // tft.fillRect(130, 115, 100, 50, BLACK); //B2
-    // tft.setTextColor(WHITE);  
-    // tft.setTextSize(5);     
-    // tft.print(num); 
-    // tft.print("%");
-    pozYR = num*20+10;    
+      int num = Serial.parseInt();
+      pozYR = num*20+10;    
      
      }
 
- if (sel == 'r') //radek
+ if (sel == 'r') //row for small text
     {
-      //Serial.println("rest");
       int num = Serial.parseInt();  
-      pozYr = num*12+10;   
-     
+      pozYr = num*12+10;
      }
      
      
@@ -462,7 +427,7 @@ void loop()
   
      // U  
   
-     //verze
+     //version
      if (sel == 'V')  {   Serial.println(VER);      } 
      
      if (sel == 'v') //verticaL line
@@ -474,7 +439,7 @@ void loop()
     }
     
     
-     if (sel == 'W') //set barvy
+     if (sel == 'W') //set color
     {     
        int col = Serial.parseInt();
        if (col==0) colTxt = BLACK; 
@@ -530,26 +495,7 @@ void loop()
   
   
   }
-  
-  /*
-  //---
-  if (SComp("but1on")==0) { T1OnOff(1); SEcho(); }  
-  if (SComp("but1of")==0) { T1OnOff(0); SEcho(); } //else {SEcho();}  
-  if (SComp("bod")==0) { tft.fillCircle(300,30, PENRADIUS, WHITE); SEcho(); }  
-  if (SComp("bod1")==0) { tft.fillCircle(300,35, PENRADIUS, WHITE); SEcho(); }  
-  if (SComp("bod2")==0) { tft.fillCircle(305,30, PENRADIUS, WHITE); SEcho(); }  
-   
-  if (SComp("echo")==0) { SEcho();}  
-  // if (SComp("t2on")==0) { T2OnOff(1);}  
-  // if (SComp("t2of")==0) { T2OnOff(0);}
-  if (noComm) { SEcho();}
-  */ 
-  
-
 }
-
-//------------
-
 
 //-----------------------------
 void testLogo() 
@@ -578,26 +524,11 @@ void togoTxt()
 {
     tft.setCursor(75, 30);
     tft.setTextSize(5);
-    //tft.setTextColor(RED);  
-    //tft.print("3"); 
-    //tft.setTextColor(WHITE); 
-    //tft.print("DWARF"); 
-    
-    //tft.fillRect(20, 87, 279, 3, WHITE);
-    
 }  
 
 void togoTxtMale() 
 {
-    //tft.setCursor(40, 15);
-    //tft.setTextSize(2);
-    //tft.setTextColor(RED);  
-    //tft.print("3"); 
-    //tft.setTextColor(WHITE); 
-    //tft.print("DWARF - DLP printer"); 
-    
-    //tft.fillRect(15, 33, 280, 2, RED);
-    
+       //tft.fillRect(15, 33, 280, 2, RED);
 }  
 
 void T1OnOff(int jak) {
