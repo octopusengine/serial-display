@@ -1,5 +1,11 @@
 # serial-display
 Arduino UNO with 324x240TTF color display - like UART serial "inteligent" terminal (or monitor)
+easy connection to a UART (I dont use the touchscreen)<br />
+<b>works with:</b><br />
+<li >PS / Mac</li>
+<li >microcontrollers PIC / Atmel</li>
+<li >Arduino Nano / Uno / Mega...</li>
+
 
 examples of use:
 https://www.instagram.com/p/_uHGhZR7VS/?tagged=serialdisplay<br />
