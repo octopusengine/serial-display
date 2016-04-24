@@ -132,19 +132,19 @@ int volt2gr120(float volt) {
 }
 
 void sdWrite(){
-  Serial.print("W2");
-  Serial.print("R1");
-  Serial.print("Q");
-  Serial.print(cntm);
+  Serial.print("W2"); //change color
+  Serial.print("R1"); //row 1
+  Serial.print("Q");  //text
+  Serial.print(cntm); 
   Serial.print(":");
   Serial.print(cnt);
   Serial.print(" >");
   Serial.print(value);
-  Serial.print("*");
+  Serial.print("*"); // end of the text
 
-  Serial.print("W1");
-  Serial.print("R2");
-  Serial.print("Q");
+  Serial.print("W1"); //change color
+  Serial.print("R2"); // row 2
+  Serial.print("Q");  //text...
   Serial.print(num2v5(value));
   Serial.print(" ... ");
   Serial.print(num2v12(value));
