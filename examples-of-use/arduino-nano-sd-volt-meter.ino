@@ -193,18 +193,17 @@ void loop()
   Serial.print(y);
 
   if (cntx<1200){
-  Serial.print("W7");   
+  Serial.print("W7");  //change color  
   int x = cntx/4;
   //int y = y0-vout*10;
   //int y = volt2gr5(num2v5(value));
   int y = volt2gr12(num2v12(value));
-  Serial.print("P");
-  Serial.print(x);
+  Serial.print("P");  //draw point x,y
+  Serial.print(x);   
   Serial.print(",");
   Serial.print(y);
   }  
-  }  
-
+ }  
 } 
 
 
