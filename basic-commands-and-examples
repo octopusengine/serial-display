@@ -10,8 +10,7 @@ BASIC commands:
 "p xNum, yNum" point
 "P xNum, yNum" 2x2 point
 
-"c num" set color
-
+"c num" set color:
  0)  = BLACK; 
  1) = WHITE;
  2) = YELLOW;
@@ -22,6 +21,7 @@ BASIC commands:
  7) = CYAN;
  8) = NAVY;
  9) = DIMGRAY;
+"W num" ...similar
 -----------------------------------------
 EXAMPLE 1:
 
