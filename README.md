@@ -19,7 +19,7 @@ https://github.com/adafruit/TFTLCD-Library<br />
 https://github.com/adafruit/Adafruit-GFX-Library<br />
 <hr />
 
-thera are icons and big numbers ( c0[] -  c9[]) definitions at max<br />
-icon.. for example 
+there are icons and big numbers ( c0[] -  c9[]) definitions at <b>oe8x8max.h</b><br />
+icon.. for example invader1a[], invader1b[], invader2a[]...
 
 
