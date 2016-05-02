@@ -1,6 +1,6 @@
 //LedControl lc=LedControl(12,11,10,2);  // Pin and # of Displays
-
 //  Take values in Arrays and Display them
+// todo: next icons
 
 byte c0[] =
 {
