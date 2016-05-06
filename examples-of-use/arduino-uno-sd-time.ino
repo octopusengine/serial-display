@@ -9,7 +9,6 @@
 int cnt=0;
 char temp[9];
 int second,minute,hour,date,month,year,temperature; 
-
 DS3231 Clock;
 bool Century=false;
 bool h12;
@@ -33,27 +32,26 @@ int y2new = 0;
 void setup(void) {
   //randomSeed(analogRead(0)); 
   //Serial.begin(9600);
-  //if (test){  Serial.println(tft.readID()); }
-   delay(6000);
-   Serial.begin(9600); 
-   Serial.println("C");
-   Serial.print("W7");
-   Serial.print("h70");
+   Serial.begin(9600);
+   //if (test){  Serial.println(tft.readID()); }
+   delay(6000);           //waiting for display
+   
+   Serial.println("C");  //clear displ.
+   Serial.print("W7");   //change color
+   Serial.print("h70");  //horizontal line (y=70)
    delay(100);
    Serial.print("h230");
-   Serial.print("R0");
-   Serial.println("Q SERIAL MONITOR - TIME*"); //prepis text na pozici 10/30/50/70/..
+   Serial.print("R0");   //set row to 0 (first line)
+   Serial.println("Q SERIAL MONITOR - TIME*"); //text ..
    delay(100);
-   Serial.print("R1");
-   Serial.print("W1");
-   Serial.print("Q octopusengine.eu*");    
+   Serial.print("R1");   //next line
+   Serial.print("W1");   //cloro - white
+   Serial.print("Q octopusengine.eu*");  // (c)   
 
    Wire.begin();
-   //-----------------nastaveni
+   //-----------------setup
    ///setupTime();
-   
    // Start the serial interface  Serial.begin(9600); 
-  
   //Serial.begin(115200);
 }    
 
@@ -146,7 +144,7 @@ int pozH = 20;
   {
   Serial.print("x"); 
   Serial.print(pozH); 
-  Serial.print("i");
+  Serial.print("i");  
   Serial.print(int(hourC/10));
   Serial.print("x"); 
   Serial.print(pozH+40); 
