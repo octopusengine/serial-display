@@ -19,6 +19,12 @@ def sdRQC(row,textString,col): # row position + string + color
   s.write("Q"+textString+"*")   # Q string *
   sleep(0.1)
 
+def sdPXYC(px,px,col): # row position + string + color  
+  s.write("W"+str(col)) # set color W or c
+  s.write("P"+str(px)) 
+  s.write(","+str(py)) 
+  sleep(0.02)
+
 from socket import gethostname, gethostbyname #getIp
 import subprocess
 def getIp():
