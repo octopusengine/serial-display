@@ -21,5 +21,13 @@ https://github.com/adafruit/Adafruit-GFX-Library<br />
 
 there are icons and big numbers ( c0[] -  c9[]) definitions at <b>oe8x8max.h</b><br />
 icon.. for example invader1a[], invader1b[], invader2a[]...
+<hr />
+<code>Serial.begin(9600);</code><br />
+<code>tft.reset();</code><br />  
+<code>uint16_t identifier = tft.readID();</code><br />
+<code>if (test){  Serial.println(tft.readID()); } </code><br />
+<br />
+type: 340 | 37672 | 37669 | 49344 ... library ADAFRUIT (2015) or SWIFT (2016) edition
+
 
 
