@@ -19,11 +19,17 @@ def sdRQC(row,textString,col): # row position + string + color
   s.write("Q"+textString+"*")   # Q string *
   sleep(0.1)
 
-def sdPXYC(px,px,col): # row position + string + color  
+def sdPXYC(px,py,col): # pixel x,y + color  
   s.write("W"+str(col)) # set color W or c
   s.write("P"+str(px)) 
   s.write(","+str(py)) 
-  sleep(0.02)
+  sleep(0.1)
+
+def sdPXY(px,py): # pixel x,y  
+  s.write("P"+str(px)) 
+  s.write(","+str(py)) 
+  sleep(0.01)
+
 
 from socket import gethostname, gethostbyname #getIp
 import subprocess
@@ -58,7 +64,7 @@ def read_temp_raw():
 def read_temp():
     lines = read_temp_raw()
     while lines[0].strip()[-3:] != 'YES':
-        time.sleep(0.2)
+        time.sleep(0.1) #0.2 ok
         lines = read_temp_raw()
     equals_pos = lines[1].find('t=')
     if equals_pos != -1:
@@ -100,26 +106,16 @@ while True:
 	print(str(t))
         sdRQC(8,"temp: "+str(t),2)
     
-        s.write("W3P")
-        s.write(str(int(tt/2)))
-        s.write(",")
-        gt=150-t*2
-	s.write(str(gt))
-	time.sleep(2)
+        #s.write("W3P")
+        #s.write(str(int(tt/2)))
+        #s.write(",")
+        px=str(int(tt/2))
+        py=150-t*2
+	#s.write(str(gt))
+	sdPXYC(px,py,3)
+
+        time.sleep(0.1)
         tt=tt+1
 
         if tt>320: tt=1
-
-
-
-
-
-
-
-
-
-
-
-
-
 
