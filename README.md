@@ -7,7 +7,11 @@ easy connection to a UART (I dont use the touchscreen)<br />
 <li >Arduino Nano / Uno / Mega...</li>
 
 <hr />
-examples of use:
+Example - serial display with Raspberry Pi (get IP function)<br />
+<img src=https://raw.githubusercontent.com/octopusengine/serial-display/master/images/sd-rpi-get-ip.jpg width=800>
+<br />
+
+next examples of use:
 https://www.instagram.com/p/_uHGhZR7VS/?tagged=serialdisplay<br />
 or <b>#serialdisplay </b> https://www.instagram.com/explore/tags/serialdisplay/<br />
 
