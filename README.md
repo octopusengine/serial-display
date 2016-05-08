@@ -14,6 +14,7 @@ Example - serial display with Raspberry Pi (get IP function)<br />
 next examples of use:
 https://www.instagram.com/p/_uHGhZR7VS/?tagged=serialdisplay<br />
 or <b>#serialdisplay </b> https://www.instagram.com/explore/tags/serialdisplay/<br />
+<img src=https://raw.githubusercontent.com/octopusengine/serial-display/master/images/sd-examples.png width=800><br />
 
 code for Arduino and Raspberry Pi is in directory: <b>examples-of-use</b><br />
 
