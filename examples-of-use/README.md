@@ -1,13 +1,17 @@
 <head3> Examples:</head3>
 
 <b>Arduino (MEGA | UNO | NANO | ..)</b><br />
-arduino-nano-sd-volt-meter.ino<br />
-arduino-uno-sd-time.ino<br />
+<li>arduino-nano-sd-volt-meter.ino<br />
+<li>arduino-uno-sd-time.ino<br />
 <hr />
 
 <b>Raspberry Pi (A | B | B2 | B3 | ...)</b><br />
-2016 new - basic library: octopusEngineHWlib.py<br />
-raspi-test-lib.py<br  /> test library (grt IP, dallas temperature sensor)
+2016 new - basic library: <li>octopusEngineHWlib.py<br />
+<li>raspi-test-lib.py<br  /> test library (grt IP, dallas temperature sensor)
+without library:<br />
+<li>raspi-python-dallas-temp.py<br />
+<li>raspi-python-get-ip.py<br />
+
 <hr />
 
 
