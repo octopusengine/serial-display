@@ -1,4 +1,4 @@
-<head3> Examples:</head3>
+# serial-display - examples
 
 <b>Arduino (MEGA | UNO | NANO | ..)</b><br />
 <li>arduino-nano-sd-volt-meter.ino<br />
