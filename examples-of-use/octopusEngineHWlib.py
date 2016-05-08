@@ -35,7 +35,7 @@ def sdPXY(px,py): # pixel x,y
   s.write(","+str(py)) 
   sleep(0.05)
 
-
+#=========net/lan/web---ip---=====================
 from socket import gethostname, gethostbyname #getIp
 import subprocess
 def getIp():
