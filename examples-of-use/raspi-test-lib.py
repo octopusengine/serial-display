@@ -5,7 +5,7 @@
 import random, sys, os, time
 from time import sleep
 
-from oeSerialDisplay import *
+from octopusEngineHWlib import *
 
 #-------------------------main test --------------
 sdW("C") #clear
