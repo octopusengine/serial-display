@@ -35,7 +35,7 @@ def sdPXY(px,py): # pixel x,y
   s.write(","+str(py)) 
   sleep(0.05)
 
-#=========net/lan/web---ip---=====================
+
 from socket import gethostname, gethostbyname #getIp
 import subprocess
 def getIp():
@@ -52,21 +52,22 @@ def getIp():
 
 
 # ======dallas====================================
-import glob 
-os.system('modprobe w1-gpio')
-os.system('modprobe w1-therm')
+try:
+ import glob 
+ os.system('modprobe w1-gpio')
+ os.system('modprobe w1-therm')
  
-base_dir = '/sys/bus/w1/devices/'
-device_folder = glob.glob(base_dir + '28*')[0]
-device_file = device_folder + '/w1_slave'
+ base_dir = '/sys/bus/w1/devices/'
+ device_folder = glob.glob(base_dir + '28*')[0]
+ device_file = device_folder + '/w1_slave'
  
-def read_temp_raw():
+ def read_temp_raw():
     f = open(device_file, 'r')
     lines = f.readlines()
     f.close()
     return lines
  
-def read_temp():
+ def read_temp():
     lines = read_temp_raw()
     while lines[0].strip()[-3:] != 'YES':
         time.sleep(0.1) #0.2 ok
@@ -78,5 +79,8 @@ def read_temp():
         temp_f = temp_c * 9.0 / 5.0 + 32.0
         #return temp_c, temp_f
         return temp_c
+except:
+ err=True
+
 
 #-------------------------end --------------
