@@ -34,5 +34,41 @@ icon.. for example invader1a[], invader1b[], invader2a[]...
 <br />
 type: 340 | 37672 | 37669 | 49344 ... library ADAFRUIT (2015) or SWIFT (2016) edition
 
+BASIC commands:
+----------------------------------------
+"C" clear display
+
+"Q" simple text string (ending *)
+"q" simple small text
+
+"h num" horizontal line
+"v num" vertical line
+"p xNum, yNum" point
+"P xNum, yNum" 2x2 point
+
+"c num" set color:
+ 0)  = BLACK; 
+ 1) = WHITE;
+ 2) = YELLOW;
+ 3) = RED;
+ 4) = GREEN;
+ 5) = MAROO;
+ 6) = MAGENTA;
+ 7) = CYAN;
+ 8) = NAVY;
+ 9) = DIMGRAY;
+"W num" ...similar
+-----------------------------------------
+EXAMPLE 1:
+
+Cc2qtest*
+>> smal yellow text "test" on clear display
+
+Qline*c7h100
+>> text "line" and cyan color horizontal line (y=100)
+
+c3v50v100v150
+>> three red vertical line x=50/100/150
+
 
 
