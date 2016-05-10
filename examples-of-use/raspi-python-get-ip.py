@@ -43,7 +43,7 @@ sdRQC(10,"octopusengine.eu",7)
 sleep(1)
 
 sdRQC(2,"raspberry pi test",1)
-sdRQC(5,"IP addres:",1)
+sdRQC(5,"IP address:",1)
 sleep(1)
 
 txt="> ip: "+getIp()
