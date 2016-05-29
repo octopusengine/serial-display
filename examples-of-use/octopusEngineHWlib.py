@@ -18,12 +18,19 @@ def sdW(textString):    # simple command write
   s.write(textString)   # 
   sleep(0.1)
 
-def sdRQC(row,textString,col): # row position + string + color  
+def sdRQC(row,textString,col): # row position + string + color 
+  lenLim = 25 #len limit for standard font size
   s.write("W"+str(col)) # set color W or c
   s.write("R"+str(row)) 
-  s.write("Q"+textString+"*")   # Q string *
+  s.write("Q"+textString[:lenLim]+"*")   # Q string *
   sleep(0.1)
-
+  
+def sdArrQ(rStart,arrText):  # block of text (several lines) from row position / last set color 
+   rr=rStart
+   for row in (arrText):
+     sdRQC(rr,row,1)
+     rr=rr+1  
+  
 def sdPXYC(px,py,col): # pixel x,y + color  
   s.write("W"+str(col)) # set color W or c
   s.write("P"+str(px)) 
@@ -34,7 +41,6 @@ def sdPXY(px,py): # pixel x,y
   s.write("P"+str(px)) 
   s.write(","+str(py)) 
   sleep(0.05)
-
 
 from socket import gethostname, gethostbyname #getIp
 import subprocess
@@ -49,7 +55,6 @@ def getIp():
      ipaddr ="ip.Err"
    #print "ip: " ip
    return ipaddr
-
 
 # ======dallas====================================
 try:
