@@ -3,7 +3,8 @@
 # 2016/05
 # octopusengine.eu
 # ------------------------------
-import sys, os, time
+import sys, os, subprocess, time
+from socket import gethostname, gethostbyname #getIp
 from time import sleep
 
 # ======tft serial monitor====================
@@ -35,15 +36,18 @@ def sdPXYC(px,py,col): # pixel x,y + color
   s.write("W"+str(col)) # set color W or c
   s.write("P"+str(px)) 
   s.write(","+str(py)) 
-  sleep(0.01)
+  sleep(0.05)
 
 def sdPXY(px,py): # pixel x,y  
   s.write("P"+str(px)) 
   s.write(","+str(py)) 
-  sleep(0.01)
+  sleep(0.001)
 
-from socket import gethostname, gethostbyname #getIp
-import subprocess
+def sdpXY(px,py): # pixel x,y  
+  s.write("p"+str(px)) 
+  s.write(","+str(py)) 
+  sleep(0.0001)
+
 def getIp():
    try:
     arg='ip route list'
@@ -56,6 +60,22 @@ def getIp():
    #print "ip: " ip
    return ipaddr
 
+#======procesor temp============================
+def getProcTemp():  
+   try:
+     pytemp = subprocess.check_output(['vcgencmd', 'measure_temp'], universal_newlines=True)
+     #ipoutput = subprocess.check_output(['vcgencmd measure_temp'], universal_newlines=True, 'w'))
+     #print pytemp 
+     eq_index = pytemp.find('=')+1 
+     #if eq_index>0:
+     var_name = pytemp[:eq_index].strip()
+     value = pytemp[eq_index:eq_index+4]
+     numvalue=float(value)
+   except:
+     numvalue = -1
+   return numvalue 
+
+
 # ======dallas====================================
 try:
  import glob 
@@ -65,14 +85,17 @@ try:
  base_dir = '/sys/bus/w1/devices/'
  device_folder = glob.glob(base_dir + '28*')[0]
  device_file = device_folder + '/w1_slave'
+
+except:
+ err=True
  
- def read_temp_raw():
+def read_temp_raw():
     f = open(device_file, 'r')
     lines = f.readlines()
     f.close()
     return lines
  
- def read_temp():
+def read_temp():
     lines = read_temp_raw()
     while lines[0].strip()[-3:] != 'YES':
         time.sleep(0.1) #0.2 ok
@@ -84,8 +107,7 @@ try:
         temp_f = temp_c * 9.0 / 5.0 + 32.0
         #return temp_c, temp_f
         return temp_c
-except:
- err=True
+
 
 
 #-------------------------end --------------
