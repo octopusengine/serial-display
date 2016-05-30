@@ -35,12 +35,12 @@ def sdPXYC(px,py,col): # pixel x,y + color
   s.write("W"+str(col)) # set color W or c
   s.write("P"+str(px)) 
   s.write(","+str(py)) 
-  sleep(0.1)
+  sleep(0.01)
 
 def sdPXY(px,py): # pixel x,y  
   s.write("P"+str(px)) 
   s.write(","+str(py)) 
-  sleep(0.05)
+  sleep(0.01)
 
 from socket import gethostname, gethostbyname #getIp
 import subprocess
