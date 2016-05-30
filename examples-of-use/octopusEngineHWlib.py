@@ -47,7 +47,8 @@ def sdpXY(px,py): # pixel x,y
   s.write("p"+str(px)) 
   s.write(","+str(py)) 
   sleep(0.0001)
-
+  
+#======get IP ============================
 def getIp():
    try:
     arg='ip route list'
@@ -60,7 +61,7 @@ def getIp():
    #print "ip: " ip
    return ipaddr
 
-#======procesor temp============================
+#====== get procesor temp ============================
 def getProcTemp():  
    try:
      pytemp = subprocess.check_output(['vcgencmd', 'measure_temp'], universal_newlines=True)
@@ -76,7 +77,7 @@ def getProcTemp():
    return numvalue 
 
 
-# ======dallas====================================
+# ====== get dallas temp ===============================
 #sudo nano /boot/config.txt >> dtoverlay=w1-gpio,gpiopin=4
 try:
  import glob 
@@ -108,7 +109,5 @@ def getDallTemp(): #get dallas senson temperature
         temp_f = temp_c * 9.0 / 5.0 + 32.0
         #return temp_c, temp_f
         return temp_c
-
-
 
 #-------------------------end --------------
