@@ -77,6 +77,7 @@ def getProcTemp():
 
 
 # ======dallas====================================
+#sudo nano /boot/config.txt >> dtoverlay=w1-gpio,gpiopin=4
 try:
  import glob 
  os.system('modprobe w1-gpio')
@@ -95,7 +96,7 @@ def read_temp_raw():
     f.close()
     return lines
  
-def read_temp():
+def getDallTemp(): #get dallas senson temperature
     lines = read_temp_raw()
     while lines[0].strip()[-3:] != 'YES':
         time.sleep(0.1) #0.2 ok
