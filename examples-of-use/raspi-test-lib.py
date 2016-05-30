@@ -28,7 +28,7 @@ sdRQC(7,"temperature:",1)
 tt=1
 while True:
         
-        t=read_temp()
+        t=getDallTemp()
 	print(str(t))
         sdRQC(8,"temp: "+str(t),2)
     
