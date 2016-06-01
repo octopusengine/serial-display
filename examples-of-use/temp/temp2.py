@@ -6,8 +6,6 @@ import random, sys, os, time
 from time import sleep
 
 from octopusEngineHWlib import *
-
-
 #======================
 import pygame
 pygame.init()
@@ -113,4 +111,4 @@ while True:
   tt=tt+1
 
   if tt>320*nas: tt=1
-
+#============================/end  
