@@ -40,12 +40,9 @@ def doGrafInit():
     pygame.draw.line(window,colSil,(hX+hW,hY+hH),(hX+hW,hY),2)
     pygame.draw.line(window,colSil,(hX+hW,hY),(hX,hY),2)
     pygame.display.flip()
-
-
 # 
 #-------------------------main test --------------
 doGrafInit()
-
 
 s.write("C") #clear
 sdRQC(0,"Serial Display",7)
@@ -67,7 +64,6 @@ print txt
 sdRQC(2,txt,2)
 
 #sdRQC(7,"temperature:",1)
-     
 #================================================
 print "test ok - end"
 
@@ -88,7 +84,11 @@ for l in range(0,60,10):
 	pygame.draw.line(window,colSil,(hX,hY+(sy-l*nast)),(hX+hW,hY+(sy-l*nast)),1)
 
 while True:
-  td=getDallTemp()
+	try:
+		td=getDallTemp()
+	except:
+		td=20
+		
   tp=getProcTemp()
   print(str(td),str(tp))
   sdRQC(8,"temp: "+str(td)+" "+str(tp),2)
