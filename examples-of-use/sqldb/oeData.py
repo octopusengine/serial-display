@@ -4,10 +4,9 @@
 # http://zetcode.com/db/sqlitepythontutorial/
 #------------------------------------------------------
 # :::todo:::
-# insert datetime
 # input/insert csv --- csvout, csvin
-# export xml
-# upload ftp
+# export xml --- xmlout, xmlin
+# upload ftp --- ftpout, ftpin
 #------------------------------------------------------
 
 import sqlite3 as lite
@@ -22,13 +21,12 @@ sel = "none"
 ffile = 'data16' # .db
 table = "temp"
 #sele="nic"
-#
 
 ramdiskPath = "/home/pi/ramdisk/"
 seleConf= ramdiskPath+"table.ini"
 fileConf= ramdiskPath+"file.ini"
 
-print "----------------------------------------init"
+print "------------------init"
 print int(time.time())
 s.write("C") #clear
 sleep(0.1)
@@ -58,14 +56,12 @@ else:
 print ("> db file: "+ ffile )
 print ("> table use / sele: "+ table )
 
-
 try:  
   sel=str(sys.argv[1])
   #name="robot" 	#scanning object name
 except: 
    name="noname"
    print ("sel: "+ sel )
-   
 
 if sel=="help":
     print ("help 123 ")
@@ -73,7 +69,6 @@ if sel=="help":
     #err.stop
 else:
     print ("First argument > sel: "+ sel )
-
 #con = None
 
 # "----------------------------------------temp"      
