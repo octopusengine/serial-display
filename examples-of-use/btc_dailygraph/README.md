@@ -6,7 +6,6 @@ json: <br />
 <br />
 simple parse and Graph View<br />
 <code>
- jObj = json.loads(urllib2.urlopen("https://www.bitstamp.net/api/ticker/").read())<br />
-
+jObj = json.loads(urllib2.urlopen("https://www.bitstamp.net/api/ticker/").read())<br />
 lastNum =int(float(jObj["last"]))
 </code>
