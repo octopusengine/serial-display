@@ -62,10 +62,10 @@ for kurz in range(900):
     sdRQC(2,str(jObj["last"])+ " USD/BTC",2)
     
     px=str(int(tt/nas))
-    py=sy-bc2gr(lastNum)
+    py=sy-bc2gr(lastNum) 
     print tt, lastNum, py
 
-    sdPXYC(px,py,2)
+    sdPXYC(px,py,2) # send one x,y point to display
     
     
     time.sleep(20)
