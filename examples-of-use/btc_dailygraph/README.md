@@ -2,6 +2,7 @@
 <h1>Bitcoin Graph View</h1> (view the current status on the chart)<br />
 Example - serial display with Raspberry Pi (get Bitcoin last value)<br />
 <img src=https://raw.githubusercontent.com/octopusengine/serial-display/master/images/btc.jpg width=800>
+<i>red line = 500</i><br />
 <br />
 <hr />
 from https://www.bitstamp.net/api/ticker/ <br />
