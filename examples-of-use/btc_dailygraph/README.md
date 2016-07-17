@@ -12,5 +12,7 @@ json: <br />
 simple parse and Graph View<br />
 <code>jObj = json.loads(urllib2.urlopen("https://www.bitstamp.net/api/ticker/").read())</code><br />
 <code>lastNum =int(float(jObj["last"]))</code>
-and show one point... of graph.
+and show one point... on the graph.<br />
+todo:<br />
+beep / alarm / sms<br />
 
