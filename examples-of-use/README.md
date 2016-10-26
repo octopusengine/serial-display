@@ -13,5 +13,6 @@ without library:<br />
 <li>raspi-python-get-ip.py<br />
 
 <hr />
-
+2016/10 - Bitcoin machine<br>
+https://github.com/octopusengine/simpleBitcoinMachine
 
