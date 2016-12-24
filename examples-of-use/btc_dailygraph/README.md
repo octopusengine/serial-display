@@ -1,5 +1,5 @@
 
-<h1>Bitcoin Graph View</h1> (view the current status on the chart)<br />
+<h1>Bitcoin Chart View</h1> (view the current status on the chart)<br />
 Example - serial display with Raspberry Pi (get Bitcoin last value)<br />
 <img src=https://raw.githubusercontent.com/octopusengine/serial-display/master/images/btc.jpg width=800><br />
 <i>red line = 600</i><br />
