@@ -1,5 +1,5 @@
 # serial-display - examples
-<Attiny85>: <a href=https://github.com/octopusengine/octopuslab/tree/master/attiny/attiny-projects/attiny-02-serial>https://github.com/octopusengine/octopuslab/tree/master/attiny/attiny-projects/attiny-02-serial</a><br />
+<b>Attiny85</b>: <a href=https://github.com/octopusengine/octopuslab/tree/master/attiny/attiny-projects/attiny-02-serial>https://github.com/octopusengine/octopuslab/tree/master/attiny/attiny-projects/attiny-02-serial</a><br />
 
 <b>Arduino (MEGA | UNO | NANO | ..)</b><br />
 <li>arduino-nano-sd-volt-meter.ino<br />
