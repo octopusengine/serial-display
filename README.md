@@ -28,8 +28,6 @@ there are icons and big numbers ( c0[] -  c9[]) definitions at <b>oe8x8max.h</b>
 
 <br /><br />
 
-https://github.com/adafruit/TFTLCD-Library<br />
-https://github.com/adafruit/TFTLCD-Library<br /><br />
 icon.. for example invader1a[], invader1b[], invader2a[]...
 <hr />
 <code>Serial.begin(9600);</code><br />
