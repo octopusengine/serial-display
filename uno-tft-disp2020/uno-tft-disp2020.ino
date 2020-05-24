@@ -360,15 +360,12 @@ void loop()
        //tft.fillCircle(sx,sy, 2, WHITE);  //PENRADIUS=2;
         tft.drawFastHLine(0, sy, 320, colTxt); 
     }
-     
-     
-    
-     
 
    /// -----------------------I J K
    //set L
    //if (sel == 'I')  {  int num = Serial.parseInt();  setButL(num); }
    //set R
+
     if (sel == 'i') //ikony
     {     
        int col = Serial.parseInt();
@@ -381,12 +378,9 @@ void loop()
        if (col==6) icon5(c6,pozix,poziy);
        if (col==7) icon5(c7,pozix,poziy);
        if (col==8) icon5(c8,pozix,poziy);
-       if (col==9) icon5(c9,pozix,poziy);
+       if (col==9) icon5(c9,pozix,poziy);      
+     }
       
-     } 
-
-
-   
    if (sel == 'I') //ikony
     {     
        int col = Serial.parseInt();
@@ -395,8 +389,7 @@ void loop()
        if (col==2) icon(invader1b,pozix,poziy);
        if (col==3) icon(invader2a,pozix,poziy);
        if (col==4) icon(invader1b,pozix,poziy);
-       if (col==5) icon(tq,pozix,poziy);
-      
+       if (col==5) icon(tq,pozix,poziy);      
      } 
    
    if (sel == 'J')   {  int num = Serial.parseInt();  setButR(num);  }
@@ -450,10 +443,9 @@ void loop()
       tft.println(strDataM);       
      }
      
-      if (sel == 'N')   {  Serial.println(SN); }//serial.num      
+      if (sel == 'N')   {  Serial.println(SN); } //serial.num   
       
-      if (sel == 'O')   { int num  = Serial.parseInt();  numBut=num; }  
-      
+      if (sel == 'O')   { int num  = Serial.parseInt();  numBut=num; }      
       
       if (sel == 'p') //point 1x1
        {
@@ -465,8 +457,7 @@ void loop()
        //tft.drawPixel(sx, sy+1, colTxt);
        //tft.drawPixel(sx+1, sy+1, colTxt);
        //tft.point(sx, sy);       
-    }
-      
+    }      
       
        if (sel == 'P') //point 2x2
        {
@@ -480,7 +471,6 @@ void loop()
        //tft.point(sx, sy);      
     }
 
-
     if (sel == 'q') //dynamic string - ending "*" Y
     {
       for (int i=0;i<64;i++) {            strDataM[i]=0;      }  
@@ -491,7 +481,6 @@ void loop()
      tft.setTextSize(1);     
      tft.println(strDataM);     
      }
-
       
     if (sel == 'Q') //prepisovatelný string na pozici Y
     {
@@ -515,8 +504,7 @@ void loop()
     // tft.setTextSize(5);     
     // tft.print(num); 
     // tft.print("%");
-    pozYR = num*20+10;    
-     
+    pozYR = num*20+10;      
      }
 
  if (sel == 'r') //radek
@@ -537,8 +525,7 @@ void loop()
      tft.setTextColor(colTxt);  
      tft.setTextSize(2);     
      tft.println(strData);       
-     }  
-     
+     }      
      
       if (sel == 't') //string na pozici Y
     {
@@ -573,8 +560,7 @@ void loop()
        //int sy = Serial.parseInt();   
        //tft.fillCircle(sx,sy, 2, WHITE);  //PENRADIUS=2;
         tft.drawFastVLine(sx, 0, 240, colTxt); 
-    }
-    
+    }    
     
      if (sel == 'W') //set barvy
     {     
@@ -604,16 +590,15 @@ void loop()
        if (col==7) colTxt = CYAN;
        if (col==8) colTxt = NAVY;
        if (col==9) colTxt = DIMGRAY;
-     }   
+     }     
+     
+     if (sel == 'X')     {  int num = Serial.parseInt();  pozX = num; } //set pozice z 
+      
+     if (sel == 'Y')     {  int num = Serial.parseInt();  pozY = num; } //set pozice y
 
-     
-     
-      if (sel == 'X')     {  int num = Serial.parseInt();  pozX = num; } //set pozice z    
-      if (sel == 'Y')     {  int num = Serial.parseInt();  pozY = num; } //set pozice y
-
-      if (sel == 'x')     {  int num = Serial.parseInt();  pozix = num; } //set pozice z ikony   
-      if (sel == 'y')     {  int num = Serial.parseInt();  poziy = num; } //set pozice y ikony
-     
+     if (sel == 'x')     {  int num = Serial.parseInt();  pozix = num; } //set pozice z ikony
+      
+     if (sel == 'y')     {  int num = Serial.parseInt();  poziy = num; } //set pozice y ikony     
      
      if (sel == 'Z') //lock uart
     {
@@ -665,8 +650,7 @@ void togoTxt()
     //tft.print("DWARF"); 
     
     //tft.fillRect(20, 87, 279, 3, WHITE);
-    
-}  
+    }  
 
 void togoTxtMale() 
 {
@@ -675,10 +659,7 @@ void togoTxtMale()
     //tft.setTextColor(RED);  
     //tft.print("3"); 
     //tft.setTextColor(WHITE); 
-    //tft.print("DWARF - DLP printer"); 
-    
-    //tft.fillRect(15, 33, 280, 2, RED);
-    
+    //tft.fillRect(15, 33, 280, 2, RED);    
 }  
 
 void T1OnOff(int jak) {
@@ -699,10 +680,7 @@ if (jak){
 else
 {
       stavT1 = 0;
-      //digitalWrite(13, HIGH);
-      
-      
-      
+      //digitalWrite(13, HIGH);      
   }
 }
 
