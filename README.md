@@ -1,4 +1,4 @@
-# serial-display
+# serial-tft-display STD
 Arduino UNO with 324x240 TTF color display - as a serial "inteligent" UART terminal (or monitor)<br />
 easy connection to a UART - Tx (I dont use the touchscreen)<br />
 <b>it works with:</b><br />
