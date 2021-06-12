@@ -17,3 +17,7 @@ without library:<br />
 2016/10 - Bitcoin machine<br>
 https://github.com/octopusengine/simpleBitcoinMachine
 
+<hr />
+2020 - ESP32 Micropython - PubSub:
+https://github.com/octopusengine/octopuslab/blob/master/esp32-micropython/examples/pubsub/ps_serial_disp.py
+
